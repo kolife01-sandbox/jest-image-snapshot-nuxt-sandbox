@@ -6,7 +6,6 @@ describe('AppAlert', () => {
   it('matches snapshot', () => {
     const wrapper = mount(AppAlert);
     const image = wrapper.html();
-    expect(true).toBe(true);
-    // expect(image).toMatchImageSnapshot();
+    expect(image).toMatchImageSnapshot();
   });
 });
