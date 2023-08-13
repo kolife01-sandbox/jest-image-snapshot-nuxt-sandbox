@@ -6,6 +6,7 @@ describe('AppAlert', () => {
   it('matches snapshot', async() => {
     const wrapper = mount(AppAlert);
     const html = wrapper.html();
+    // TODO: style is not applied
     const screenshot = await captureScreenshot(html);
     expect(screenshot).toMatchImageSnapshot();
   });
