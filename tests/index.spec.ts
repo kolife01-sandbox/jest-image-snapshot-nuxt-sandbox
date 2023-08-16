@@ -1,21 +1,24 @@
 import puppeteer, { Browser, Page } from 'puppeteer';
 import "expect-puppeteer";
 
-describe('Google', () => {
+describe('puppeteer test', () => {
   let browser: Browser;
   let page: Page;
 
   beforeAll(async () => {
     browser = await puppeteer.launch({ headless: 'new' });
     page = await browser.newPage();
-    await page.goto('https://google.com');
+    await page.goto('http://localhost:3000');
   });
 
   afterAll(async () => {
     await browser.close();
   });
 
-  it('should display "google" text on page', async () => {
-    await expect(page).toMatchTextContent('google');
+  it('should display "Text" text on page', async () => {
+    console.log('page', page);
+    const image = await page.screenshot();
+    await expect(page).toMatchTextContent('Welcome to the homepage page Index');
+    expect(image).toMatchImageSnapshot();
   });
 });
