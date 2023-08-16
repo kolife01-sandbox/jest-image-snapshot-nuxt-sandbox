@@ -1,5 +1,5 @@
 module.exports = {
-  preset: 'ts-jest',
+  preset: 'jest-puppeteer',
   testEnvironment: 'jsdom',
   testEnvironmentOptions: {
     customExportConditions: ["node", "node-addons"],
